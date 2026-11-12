@@ -1,0 +1,23 @@
+SELECT ATOR.NomeReal, ATOR.NomeArtistico, PERSONAGEM.Personagem
+FROM ATOR
+INNER JOIN PERSONAGEM
+ON ATOR.CodAtor = PERSONAGEM.CodAtor
+WHERE ATOR.NomeReal = 'Maria da Silva';
+
+SELECT ATOR.NomeArtistico, FILME.NomeFilme, PERSONAGEM.Personagem
+FROM ATOR
+INNER JOIN PERSONAGEM
+ON ATOR.CodAtor = PERSONAGEM.CodAtor
+INNER JOIN FILME
+ON PERSONAGEM.CodFilme = FILME.CodFilme
+WHERE ATOR.NomeArtistico = 'Jim Carrey';
+
+use clinica;
+
+SELECT medico.nomeMed, paciente.nomePac, consulta.dia, consulta.hora
+FROM medico
+INNER JOIN consulta
+ON medico.codMed = consulta.codMed
+INNER JOIN paciente
+ON consulta.codPac = paciente.codPac
+WHERE consulta.dia BETWEEN '2025-04-01' AND '2025-04-30';
